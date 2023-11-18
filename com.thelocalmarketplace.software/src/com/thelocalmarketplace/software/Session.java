@@ -8,7 +8,9 @@ import ca.ucalgary.seng300.simulation.InvalidStateSimulationException;
 import ca.ucalgary.seng300.simulation.NullPointerSimulationException;
 
 import com.jjjwelectronics.IDevice;
+import com.jjjwelectronics.Mass;
 import com.jjjwelectronics.scale.IElectronicScale;
+import com.jjjwelectronics.scanner.BarcodedItem;
 import com.jjjwelectronics.scanner.IBarcodeScanner;
 import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
 
@@ -28,6 +30,7 @@ public class Session {
 
 	public AbstractSelfCheckoutStation station;
 	
+	private boolean isStationBlockedForBulkyItem;
 	
 	/*
 	 * flag to check the register status of devices
@@ -77,6 +80,8 @@ public class Session {
 		this.registerStatus = false;
 
 		registerStation(station);
+		
+		this.isStationBlockedForBulkyItem = false;
 		
 	}
 	
@@ -237,4 +242,113 @@ public class Session {
 		return res;
 
 	}
+    /**
+     * Blocks the self-checkout station from further customer input while handling a bulky item.
+     * This could involve disabling certain hardware components or user interface elements.
+     */
+    public void blockStationForBulkyItem() {
+        // Set the flag indicating the station is blocked for bulky item processing.
+        this.isStationBlockedForBulkyItem = true;
+
+        // Disable necessary components
+        if (this.station != null) {
+            // Disable scanners
+            if (this.station.mainScanner != null) {
+                this.station.mainScanner.disable();
+            }
+            if (this.station.handheldScanner != null) {
+                this.station.handheldScanner.disable();
+            }
+
+            // Disable scale
+            if (this.station.baggingArea != null) {
+                this.station.baggingArea.disable();
+            }
+
+            // Additional disabling logic for other components (e.g., payment system)
+            // Example:
+            // if (this.station.cardReader != null) {
+            //     this.station.cardReader.disable();
+            // }
+
+            // Update GUI if necessary
+            // Example: updateGUIForBulkyItemProcessing();
+        }
+    }
+
+    /**
+     * Unblocks the self-checkout station, re-enabling components disabled during bulky item processing.
+     */
+    public void unblockStationForBulkyItem() {
+        // Reset the flag
+        this.isStationBlockedForBulkyItem = false;
+
+        // Re-enable components
+        if (this.station != null) {
+            // Re-enable scanners
+            if (this.station.mainScanner != null) {
+                this.station.mainScanner.enable();
+            }
+            if (this.station.handheldScanner != null) {
+                this.station.handheldScanner.enable();
+            }
+
+            // Re-enable scale
+            if (this.station.baggingArea != null) {
+                this.station.baggingArea.enable();
+            }
+
+            if (this.station.cardReader != null) {
+                this.station.cardReader.enable();
+            }
+
+          
+        }
+    }
+
+    /**
+     * Adjusts the checkout session for handling a bulky item. This could involve 
+     * modifying the expected total weight at the bagging area.
+     *
+     * @param item The bulky item being processed.
+     */
+    public void adjustForBulkyItem(BarcodedItem item) {
+        if (item == null) {
+            throw new IllegalArgumentException("Item cannot be null.");
+        }
+
+        // Assuming there is a way to get the expected weight from the bagging area
+        // and a method to set the expected weight. 
+        // Adjust the expected weight to account for the bulky item.
+        Mass expectedWeight = this.station.baggingArea.getExpectedWeight();
+        expectedWeight = expectedWeight.subtract(item.getMass());
+        this.station.baggingArea.setExpectedWeight(expectedWeight);
+
+        // Optionally, add the bulky item to the cart with a special flag or category.
+        cart.addBulkyItem(item);
+    }
+
+    /**
+     * Processes a normal item by scanning it and adding it to the cart.
+     *
+     * @param item The item to be processed.
+     */
+    public void processNormalItem(BarcodedItem item) {
+        if (item == null) {
+            throw new IllegalArgumentException("Item cannot be null.");
+        }
+
+        // Scan the item's barcode and add it to the cart.
+        Barcode barcode = item.getBarcode();
+        // Assuming the scannerListener has a method to process the scanned item.
+        scannerListener.scanItem(barcode);
+
+        // Add the item to the cart.
+        cart.addItem(item);
+
+        // Update the expected weight in the bagging area.
+        Mass expectedWeight = this.station.baggingArea.getExpectedWeight();
+        expectedWeight = expectedWeight.add(item.getMass());
+        this.station.baggingArea.setExpectedWeight(expectedWeight);
+    }
 }
