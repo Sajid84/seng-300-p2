@@ -1,68 +1,133 @@
+// Sana Abdelhalem    30163580
+// Ali Al Yasseen     30151000
+// Yang Yang          30156356
+// Andres Genatios    30142768
+// Abdullah Ishtiaq   30153185
+// Nicholas MacKinnon 30172737
+// Carlos Serrouya    30192761
+// Logan Miszaniec    30156384
+// Ali Sebbah         30172851
+
 package com.thelocalmarketplace.software;
+
 import com.jjjwelectronics.scale.ElectronicScaleSilver;
 import com.jjjwelectronics.scanner.BarcodedItem;
+import com.jjjwelectronics.scanner.Barcode;
+import com.thelocalmarketplace.hardware.BarcodedProduct;
+import com.thelocalmarketplace.hardware.external.ProductDatabases;
+
+/**
+ * Handler for processing bulky items at a Silver model self-checkout station.
+ * It includes logic to determine if an item is too bulky and to provide appropriate feedback.
+ */
 public class SilverBulkyItemHandler {
-private ElectronicScaleSilver scale;
-private Session session;
+    private ElectronicScaleSilver scale;
+    private Session session;
 
-/**
-* Constructor for the SilverBulkyItemHandler.
-*
-* @param scale The electronic scale used in the Silver model.
-* @param session The current checkout session.
-*/
-public SilverBulkyItemHandler(ElectronicScaleSilver scale, Session session) {
+    /**
+     * Constructs a SilverBulkyItemHandler with a given scale and session.
+     *
+     * @param scale   The electronic scale used in the Silver model.
+     * @param session The current checkout session.
+     */
+    public SilverBulkyItemHandler(ElectronicScaleSilver scale, Session session) {
+        this.scale = scale;
+        this.session = session;
+    }
 
-		this.scale = scale;
-		this.session = session;
-}
-/**
-* Processes a bulky item in the Silver model self-checkout.
-*
-* @param item The bulky item to be processed.
-*/
-public void processBulkyItem(BarcodedItem item) {
+    /**
+     * Processes a bulky item. If the item is too bulky, handles it accordingly.
+     * Otherwise, processes it as a normal item.
+     *
+     * @param item The item to be processed.
+     */
+    public void processBulkyItem(BarcodedItem item) {
+        if (isItemTooBulky(item)) {
+            handleBulkyItem(item);
+        } else {
+            session.processNormalItem(item);
+        }
+    }
 
-	if (isItemTooBulky(item)) {
+    /**
+     * Determines if an item is too bulky for the scale.
+     *
+     * @param item The item to check.
+     * @return True if the item is too bulky, false otherwise.
+     */
+    private boolean isItemTooBulky(BarcodedItem item) {
+        return item.getMass().compareTo(ElectronicScaleSilver.MASS_LIMIT) > 0;
+    }
 
-		handleBulkyItem(item);
-} 	else {
-// If the item is not too heavy, process as normal.
-		session.processNormalItem(item);
+    /**
+     * Handles the processing of an item deemed too bulky for the scale.
+     *
+     * @param item The bulky item to be processed.
+     */
+    private void handleBulkyItem(BarcodedItem item) {
+        session.blockStationForBulkyItem();
+        session.adjustForBulkyItem(item);
+        provideEnhancedFeedback(item);
+        session.unblockStationForBulkyItem();
+    }
+
+    /**
+     * Provides enhanced feedback for a bulky item.
+     *
+     * @param item The bulky item that has been processed.
+     */
+    private void provideEnhancedFeedback(BarcodedItem item) {
+        String message = "Bulky item processed: " + item.getBarcode();
+        String additionalDetails = getProductDetails(item.getBarcode());
+        String handlingInstructions = getHandlingInstructions(item.getBarcode());
+
+        message += additionalDetails.isEmpty() ? "" : ". Details: " + additionalDetails;
+        message += handlingInstructions.isEmpty() ? "" : ". Handling Instructions: " + handlingInstructions;
+
+        System.out.println(message);
+    }
+
+    /**
+     * Retrieves additional details about a product given its barcode.
+     *
+     * @param barcode The barcode of the product.
+     * @return A string containing product details.
+     */
+    private String getProductDetails(Barcode barcode) {
+        BarcodedProduct product = ProductDatabases.BARCODED_PRODUCT_DATABASE.get(barcode);
+        if (product != null) {
+            String details = product.getDescription();
+            double expectedWeight = product.getExpectedWeight();
+            details += ", Expected Weight: " + expectedWeight + " grams";
+            return details;
+        }
+        return "Product details not available";
+    }
+
+    /**
+     * Retrieves handling instructions for a product given its barcode.
+     *
+     * @param barcode The barcode of the product.
+     * @return A string containing handling instructions.
+     */
+    private String getHandlingInstructions(Barcode barcode) {
+        BarcodedProduct product = ProductDatabases.BARCODED_PRODUCT_DATABASE.get(barcode);
+        if (product != null) {
+            double expectedWeight = product.getExpectedWeight();
+            String handlingInfo;
+
+            if (expectedWeight > ElectronicScaleSilver.MASS_LIMIT.doubleValue()) {
+                handlingInfo = "Item is too heavy for standard bagging. Please seek assistance.";
+            } else if (expectedWeight > ElectronicScaleSilver.SENSITIVITY.doubleValue() && expectedWeight <= ElectronicScaleSilver.MASS_LIMIT.doubleValue()) {
+                handlingInfo = "Carefully place item in the bagging area, if possible.";
+            } else {
+                handlingInfo = "Standard handling is sufficient for this item.";
+            }
+
+            return handlingInfo;
+        }
+        return "Handling instructions not available.";
+    }
 }
-}
-/**
-* Checks if the item's mass exceeds the scale's capabilities.
-*
-* @param item The item to check.
-* @return true if the item is too bulky, false otherwise.
-*/
-private boolean isItemTooBulky(BarcodedItem item) {
-// The Silver model might have a higher mass limit than the Bronze model.
-return item.getMass().compareTo(ElectronicScaleSilver.MASS_LIMIT) > 0;
-}
-/**
-* Handles the processing of an item deemed too bulky for the scale.
-*
-* @param item The bulky item to be processed.
-*/
-private void handleBulkyItem(BarcodedItem item) {
-// Block further customer input.
-session.blockStationForBulkyItem();
-// Adjust the expected weight in the bagging area.
-session.adjustForBulkyItem(item);
-// Enhanced feedback to the user, considering Silver's capabilities.
-provideEnhancedFeedback(item);
-// Unblock the station for further customer input.
-session.unblockStationForBulkyItem();
-}
-/**
-* Provide enhanced feedback to the user specific to the Silver model.
-*
-*
-* @param item The bulky item that has been processed.
-*/
-private void provideEnhancedFeedback(BarcodedItem item) {
-System.out.println("Bulky item processed: " + item.getBarcode());
-}
-}
+
+
