@@ -80,6 +80,34 @@ public class Cart{
 		cantChange();
 		}
 	}
+	
+	public void removeBarcodedProductFromCart (BarcodedProduct p) {
+		if (getCanChange() && !getInPayment()) {
+			if (getNumberItems() > 0) {
+				cart.remove(p);
+				numberProductsInCart--;
+				massOfCart -= p.getExpectedWeight();
+				if (p.isPerUnit()) {
+					priceOfCart -= (double)p.getPrice();		
+					}
+				else {
+					double grams = p.getExpectedWeight();
+					double kgrams = grams/1000.0;//g to kg
+					priceOfCart -= (double) p.getPrice()*kgrams;
+				}
+			}
+			else {
+				System.out.print("There are no items in your cart");
+			}
+			
+			
+		}
+		else {
+			cantChange();
+		}
+		
+	}
+
 	/**
 	 *getter for number of products in the cart
 	 * 		
