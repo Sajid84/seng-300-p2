@@ -37,8 +37,8 @@ public class PayWithBankNotesTest {
 
         payment.goodBanknote(new BanknoteValidator(currency, null), currency, denomination);
 
-        assertEquals(new BigDecimal("30.00"), payment.amountOwed);
-        assertFalse(cart.paymentComplete);
+        assertEquals(new BigDecimal("30.00"), BigDecimal.valueOf(cart.getCartTotal()));
+        assertFalse(!cart.getPayment());
     }
 
     @Test
@@ -48,8 +48,8 @@ public class PayWithBankNotesTest {
 
         payment.goodBanknote(new BanknoteValidator(currency, null), currency, denomination);
 
-        assertEquals(BigDecimal.ZERO, payment.amountOwed);
-        assertTrue(cart.paymentComplete);
+        assertEquals(BigDecimal.ZERO, BigDecimal.valueOf(cart.getCartTotal()));
+        assertTrue(cart.getPayment());
     }
 
     @Test
@@ -59,15 +59,15 @@ public class PayWithBankNotesTest {
 
         payment.goodBanknote(new BanknoteValidator(currency, null), currency, denomination);
 
-        assertEquals(new BigDecimal("20.00"), payment.amountOwed);
-        assertFalse(cart.paymentComplete);
+        assertEquals(new BigDecimal("20.00"), BigDecimal.valueOf(cart.getCartTotal()));
+        assertFalse(!cart.getPayment());
     }
 
     @Test
     public void testBadBanknote() {
         payment.badBanknote(new BanknoteValidator(null, null));
 
-        assertFalse(cart.paymentComplete);
+        assertFalse(!cart.getPayment());
     }
 
 }
