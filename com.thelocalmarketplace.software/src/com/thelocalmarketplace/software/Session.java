@@ -1,5 +1,16 @@
-//Yang Yang:30156356
+//Yang Yang           30156356
+// Sana Abdelhalem    30163580
+// Ali Al Yasseen     30151000
+// Andres Genatios    30142768
+// Abdullah Ishtiaq   30153185
+// Nicholas MacKinnon 30172737
+// Carlos Serrouya    30192761
+// Logan Miszaniec    30156384
+// Ali Sebbah         30172851
+
 //Edited on the base of Iteration1
+
+
 package com.thelocalmarketplace.software;
 import ca.ucalgary.seng300.simulation.InvalidArgumentSimulationException;
 import ca.ucalgary.seng300.simulation.InvalidStateSimulationException;
