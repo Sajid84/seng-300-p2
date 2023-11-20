@@ -18,19 +18,15 @@ import ca.ucalgary.seng300.simulation.InvalidStateSimulationException;
 
 public class validatorObserver implements CoinValidatorObserver{
 	Cart c;
-	ProductDatabases d;
 	/**
 	 * Constructor for coin validator listener.
 	 * 
 	 * @param cart
 	 *           cart assocatied to session running on station this listener is registered to
-	 * @param db
-	 * 			  product database for the store.
 	 * 
 	 */
-	public validatorObserver(Cart cart, ProductDatabases db) {
+	public validatorObserver(Cart cart) {
 		c = cart;
-		d = db;
 	}
 	
 	/**

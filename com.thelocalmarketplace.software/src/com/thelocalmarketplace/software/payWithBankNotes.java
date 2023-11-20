@@ -8,18 +8,16 @@ import com.tdc.IComponentObserver;
 import com.tdc.banknote.BanknoteValidator;
 import com.tdc.banknote.BanknoteValidatorObserver;
 
+import ca.ucalgary.seng300.simulation.InvalidStateSimulationException;
+
 public class payWithBankNotes implements BanknoteValidatorObserver{
 	
-	private BigDecimal amountOwed;
 	private Cart cart;
-	private static final BigDecimal zero = new BigDecimal("0");
 	
 	public payWithBankNotes(BigDecimal amountOwed, Cart cart) {
 		
 		this.cart = cart;
-		
-		amountOwed = new BigDecimal("0");
-		amountOwed.add(amountOwed);
+
 	}
 
 	@Override
@@ -49,13 +47,10 @@ public class payWithBankNotes implements BanknoteValidatorObserver{
 	@Override
 	public void goodBanknote(BanknoteValidator validator, Currency currency, BigDecimal denomination) {
 		// valid banknote has been injected
-		amountOwed.subtract(denomination);
-		if(amountOwed.compareTo(zero) <= 0) {
-			// cart has been paid for
-			cart.endPayment();
-		}
-		else {
-			System.out.println("Remaining Balace: " + amountOwed);
+		if (cart.getCanChange() && cart.getInPayment() && cart.getCartTotal()>=0) {// no discre
+			cart.reduce_total_by(denomination.doubleValue());
+		}else {
+			throw new InvalidStateSimulationException("cannot add bank note");
 		}
 	}
 

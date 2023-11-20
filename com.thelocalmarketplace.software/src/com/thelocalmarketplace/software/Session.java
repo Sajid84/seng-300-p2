@@ -15,11 +15,20 @@ package com.thelocalmarketplace.software;
 import ca.ucalgary.seng300.simulation.InvalidArgumentSimulationException;
 import ca.ucalgary.seng300.simulation.InvalidStateSimulationException;
 import ca.ucalgary.seng300.simulation.NullPointerSimulationException;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Comparator;
+import java.util.Vector;
+
 import com.jjjwelectronics.IDevice;
 import com.jjjwelectronics.Mass;
 import com.jjjwelectronics.scale.IElectronicScale;
 import com.jjjwelectronics.scanner.BarcodedItem;
 import com.jjjwelectronics.scanner.IBarcodeScanner;
+import com.tdc.CashOverloadException;
+import com.tdc.DisabledException;
+import com.tdc.NoCashAvailableException;
 import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
 /*
 * Represents a self checkout session that a customer will start
@@ -165,6 +174,7 @@ public class Session {
 	public void exitCheckout() {
 		inCheckout = false;
 		cart.endPayment();
+		giveChange(cart.getCartTotal());
 		//cart.canChange();
 	}
 	
@@ -319,4 +329,50 @@ public class Session {
 	    expectedWeight = expectedWeight.add(item.getMass());
 	    this.station.baggingArea.setExpectedWeight(expectedWeight);
 	}
+	
+	/**
+	* Returns change to user in form of banknotes and coins.
+	* 
+	* @param returnAmount
+	* 	double representing the total change to be dispensed
+	*/
+	public void giveChange(double returnAmount) throws DisabledException, CashOverloadException {
+		BigDecimal toReturn = BigDecimal.valueOf(Math.abs(returnAmount));
+		Vector<BigDecimal> noteDenoms = new Vector<BigDecimal>();
+		Vector<BigDecimal> coinDenoms = new Vector<BigDecimal>(station.coinDenominations);
+		for(int i = 0; i < station.banknoteDenominations.length; i++) {
+			noteDenoms.add(station.banknoteDenominations[i]);
+		}
+		coinDenoms.sort(Comparator.reverseOrder());
+		noteDenoms.sort(Comparator.reverseOrder());
+		
+		for(int i = 0; i < noteDenoms.size(); i++) {
+			while(toReturn.compareTo(noteDenoms.elementAt(i)) >= 0) {
+				try {
+					station.banknoteDispensers.get(noteDenoms.elementAt(i)).emit();
+					toReturn.subtract(noteDenoms.elementAt(i));
+				} catch (NoCashAvailableException e) {
+					// notify attendant of empty dispenser
+				} catch (DisabledException | CashOverloadException e) {}
+			}
+		}
+		station.banknoteOutput.dispense();
+		
+		for(int i = 0; i < coinDenoms.size(); i++) {
+			while(toReturn.compareTo(coinDenoms.elementAt(i)) >= 0) {
+				try {
+					station.coinDispensers.get(coinDenoms.elementAt(i)).emit();
+					toReturn.subtract(coinDenoms.elementAt(i));
+				} catch (NoCashAvailableException e) {
+					// notify attendant of empty dispenser
+				} catch (DisabledException | CashOverloadException e) {}
+			}
+		}
+		if (toReturn.compareTo(BigDecimal.ZERO) == 1) {
+			// notify attendant for remaining change due
+		}
+
+		
+		
 	}
+}
