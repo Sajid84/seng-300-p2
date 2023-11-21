@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6ae75d8c-1d07-46bf-b1f6-332d8dee0f7a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/InvalidArgumentSimulationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/InvalidArgumentSimulationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/InvalidStateSimulationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/InvalidStateSimulationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/NullPointerSimulationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/NullPointerSimulationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/SimulationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/ca/ucalgary/seng300/simulation/SimulationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/AbstractDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/AbstractDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/DisabledDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/DisabledDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/EmptyDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/EmptyDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/IDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/IDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/IDeviceListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/IDeviceListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/IllegalDigitException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/IllegalDigitException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Mass$MassDifference.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Mass$MassDifference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Mass.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Mass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Numeral.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/Numeral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/OverloadedDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/OverloadedDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/AbstractCardReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/AbstractCardReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/BlockedCardException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/BlockedCardException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/Card$CardData.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/Card$CardData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/Card$CardSwipeData.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/Card$CardSwipeData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderBronze.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderBronze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderSilver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/CardReaderSilver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/ChipFailureException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/ChipFailureException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/ICardReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/ICardReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/InvalidPINException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/InvalidPINException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/MagneticStripeFailureException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/card/MagneticStripeFailureException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/AbstractReceiptPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/AbstractReceiptPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/IReceiptPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/IReceiptPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterBronze.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterBronze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterSilver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/printer/ReceiptPrinterSilver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/AbstractElectronicScale.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/AbstractElectronicScale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleBronze.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleBronze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleSilver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/ElectronicScaleSilver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/IElectronicScale.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scale/IElectronicScale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/AbstractBarcodeScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/AbstractBarcodeScanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/Barcode.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/Barcode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerBronze.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerBronze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerSilver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodeScannerSilver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodedItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/BarcodedItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/IBarcodeScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/jjjwelectronics/scanner/IBarcodeScanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/AbstractComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/AbstractComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/CashOverloadException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/CashOverloadException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/ComponentFailure.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/ComponentFailure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/DisabledException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/DisabledException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/IComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/IComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/IComponentObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/IComponentObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/NoCashAvailableException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/NoCashAvailableException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/PassiveSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/PassiveSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/Sink.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/Sink.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/Source.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/Source.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/AbstractBanknoteDispenser.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/AbstractBanknoteDispenser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/Banknote.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/Banknote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispensationSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispensationSlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispensationSlotObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispensationSlotObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispenserBronze.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispenserBronze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispenserGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispenserGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispenserObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteDispenserObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteInsertionSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteInsertionSlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteInsertionSlotObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteInsertionSlotObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteStorageUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteStorageUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteStorageUnitObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteStorageUnitObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteValidatorObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/BanknoteValidatorObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/IBanknoteDispenser.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/banknote/IBanknoteDispenser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/AbstractCoinDispenser.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/AbstractCoinDispenser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinDispenserBronze.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinDispenserBronze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinDispenserGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinDispenserGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinDispenserObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinDispenserObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinSlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinSlotObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinSlotObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinStorageUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinStorageUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinStorageUnitObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinStorageUnitObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinValidatorObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/CoinValidatorObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/ICoinDispenser.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/tdc/coin/ICoinDispenser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/AbstractSelfCheckoutStation.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/AbstractSelfCheckoutStation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/BarcodedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/BarcodedProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/CoinTray.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/CoinTray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/OneWayChannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/OneWayChannel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/PLUCodedItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/PLUCodedItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/PLUCodedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/PLUCodedProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/PriceLookUpCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/PriceLookUpCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/SelfCheckoutStationBronze.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/SelfCheckoutStationBronze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/SelfCheckoutStationGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/SelfCheckoutStationGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/SelfCheckoutStationSilver.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/SelfCheckoutStationSilver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/TwoWayChannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/TwoWayChannel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/external/CardIssuer$CardRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/external/CardIssuer$CardRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/external/CardIssuer.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/external/CardIssuer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/external/ProductDatabases.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/com/thelocalmarketplace/hardware/external/ProductDatabases.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/NoPowerException.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/NoPowerException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerGrid$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerGrid$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerGrid$PowerState.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerGrid$PowerState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerGrid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerSurge.class" beforeDir="false" afterPath="$PROJECT_DIR$/com.thelocalmarketplace.hardware_0.2.2/bin/powerutility/PowerSurge.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2YSkVhlJEch717Y8YLd2CviKqh0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/tester/Documents/GitHub/seng-300-p2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ae75d8c-1d07-46bf-b1f6-332d8dee0f7a" name="Changes" comment="" />
+      <created>1700526394143</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700526394143</updated>
+      <workItem from="1700526395380" duration="711000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
