@@ -263,13 +263,7 @@ public class Session {
 	        if (this.station.baggingArea != null) {
 	            this.station.baggingArea.disable();
 	        }
-	        // Additional disabling logic for other components (e.g., payment system)
-	        // Example:
-	        // if (this.station.cardReader != null) {
-	        // this.station.cardReader.disable();
-	        // }
-	        // Update GUI if necessary
-	        // Example: updateGUIForBulkyItemProcessing();
+
 	    }
 	}
 
