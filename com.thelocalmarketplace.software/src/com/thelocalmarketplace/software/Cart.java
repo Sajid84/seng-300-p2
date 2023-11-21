@@ -7,6 +7,8 @@
 // Carlos Serrouya    30192761
 // Logan Miszaniec    30156384
 // Ali Sebbah         30172851
+// Shaikh Sajid Mahmood 30182396
+
 package com.thelocalmarketplace.software;
 
 import java.util.ArrayList;
@@ -26,7 +28,7 @@ public class Cart{
 	/**
 	 *List of products a customer has added to their cart
 	 */
-	private ArrayList<Product> cart = new ArrayList<Product>();
+	private static ArrayList<Product> cart = new ArrayList<Product>();
 	/**
 	 *Current mass of the cart in grams
 	 */
@@ -34,7 +36,7 @@ public class Cart{
 	/**
 	 *Current price of the cart
 	 */
-	private double priceOfCart = 0.0;
+	private static double priceOfCart = 0.0;
 	/**
 	 *Current number of products in the cart
 	 */
@@ -136,6 +138,9 @@ public class Cart{
 		return massOfCart;
 		
 	}
+	
+	public static ArrayList<Product> getCart() { return cart; }
+	
 	/**
 	 *reduces the price of the cart by reduction. This is used when paying for a cart
 	 * 		
@@ -143,11 +148,16 @@ public class Cart{
 	public void reduce_total_by (double reduction) {
 		priceOfCart-=reduction;
 	}
+	
+	public static void updateExpectedPrice (double newprice) {
+		priceOfCart = newprice;
+	}
+	
 	/**
 	 *getter for the current price of the cart
 	 * 		
 	 */
-	public double getCartTotal() {
+	public static double getCartTotal() {
 		return priceOfCart;
 	}
 	/**
