@@ -1,60 +1,29 @@
-// Andres Genatios 30142768
 package com.thelocalmarketplace.software;
 
-import com.jjjwelectronics.IDevice;
-import com.jjjwelectronics.IDeviceListener;
-import com.jjjwelectronics.Mass;
-import com.jjjwelectronics.scale.ElectronicScaleListener;
-import com.jjjwelectronics.scale.IElectronicScale;
-import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
-public class AddOwnBag implements ElectronicScaleListener{
-
-	// private Mass mass;
-	
-	
-	
-	@Override
-	public void aDeviceHasBeenEnabled(IDevice<? extends IDeviceListener> device) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void aDeviceHasBeenDisabled(IDevice<? extends IDeviceListener> device) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void aDeviceHasBeenTurnedOn(IDevice<? extends IDeviceListener> device) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void aDeviceHasBeenTurnedOff(IDevice<? extends IDeviceListener> device) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void theMassOnTheScaleHasChanged(IElectronicScale scale, Mass mass) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void theMassOnTheScaleHasExceededItsLimit(IElectronicScale scale) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void theMassOnTheScaleNoLongerExceedsItsLimit(IElectronicScale scale) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
-
+public class AddOwnBag {
+    private boolean isSystemReady = true;
+    private boolean customerHasAddedBags = false;
+    int weight;
+    int maxWeight;
+    
+    public void customerAddsBags() {
+        if (!isSystemReady) {
+            System.out.println("System is not ready to note weight discrepancies.");
+            return;
+        }
+        System.out.println("Please add your own bags now.");
+        customerHasAddedBags = true;
+        detectWeightChange();
+    }
+    
+    private void detectWeightChange() {
+        if (customerHasAddedBags) {
+            System.out.println("Bags detected. You may continue with your transaction.");
+        } else {
+            System.out.println("No bags detected. Please add your bags.");
+        }
+        if (weight < maxWeight) {
+            // Where the extension point for bagsTooHeavy would be implemented. 
+        }
+    }
 }
