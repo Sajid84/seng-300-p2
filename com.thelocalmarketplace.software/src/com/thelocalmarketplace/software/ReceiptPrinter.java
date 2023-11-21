@@ -23,7 +23,10 @@ public class ReceiptPrinter {
     // Preconditions: Payment in full has been received for the customer’s order.
     // Trigger: Payment in full has been received for the customer’s order.
 
-    // Scenario:
+    public boolean isOutOfPaperOrInk;
+	public boolean printPaymentRecord;
+
+	// Scenario:
     public void printReceipt(PaymentRecord paymentRecord) {
         try {
             // 1. System: The payment record will be up-to-date with details of the payment(s).
@@ -113,36 +116,37 @@ public class ReceiptPrinter {
         printReceiptUseCase.printReceipt(paymentRecord);
     }
     */
-}
 
-class PaymentRecord {
-    private Date timestamp;
-    private String paymentMethod;
-    private double amount;
-    private List<String> paymentDetails; // List to store payment details
 
-    public PaymentRecord(Date timestamp, String paymentMethod, double amount) {
-        this.timestamp = timestamp;
-        this.paymentMethod = paymentMethod;
-        this.amount = amount;
-        this.paymentDetails = new ArrayList<>();
-    }
-
-    public void updateRecord() {
-        // Update payment record details
-        paymentDetails.add("Timestamp: " + timestamp);
-        paymentDetails.add("Payment Method: " + paymentMethod);
-        paymentDetails.add("Amount: " + amount);
-        System.out.println("Payment record updated successfully.");
-    }
-
-    public boolean isPaymentInFull() {
-        return amount > 0;
-    }
-
-    public List<String> getPaymentDetails() {
-        return paymentDetails;
-    }
+	public class PaymentRecord {
+	    private Date timestamp;
+	    private String paymentMethod;
+	    private double amount;
+	    private List<String> paymentDetails; // List to store payment details
+	
+	    public PaymentRecord(Date timestamp, String paymentMethod, double amount) {
+	        this.timestamp = timestamp;
+	        this.paymentMethod = paymentMethod;
+	        this.amount = amount;
+	        this.paymentDetails = new ArrayList<>();
+	    }
+	
+	    public void updateRecord() {
+	        // Update payment record details
+	        paymentDetails.add("Timestamp: " + timestamp);
+	        paymentDetails.add("Payment Method: " + paymentMethod);
+	        paymentDetails.add("Amount: " + amount);
+	        System.out.println("Payment record updated successfully.");
+	    }
+	
+	    public boolean isPaymentInFull() {
+	        return amount > 0;
+	    }
+	
+	    public List<String> getPaymentDetails() {
+	        return paymentDetails;
+	    }
+	}
 }
 
 class ReceiptPrintingException extends RuntimeException {
