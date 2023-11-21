@@ -17,6 +17,8 @@ import org.junit.Before;
 import org.junit.Test;
 import com.jjjwelectronics.Numeral;
 import com.jjjwelectronics.scanner.Barcode;
+import com.tdc.CashOverloadException;
+import com.tdc.DisabledException;
 import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
 import com.thelocalmarketplace.hardware.BarcodedProduct;
 import com.thelocalmarketplace.hardware.Product;
@@ -346,7 +348,7 @@ public class SessionTests {
         
         //Tests if checkout can successfully exit once completed
         @Test
-        public void testExitCheckout() {
+        public void testExitCheckout() throws DisabledException, CashOverloadException {
                 Cart cart = new Cart();
                 session.startSession();
                 session.cart = cart;
