@@ -110,7 +110,7 @@ public class GoldStationMainScannerTest {
 		station.plugIn(powerGrid);
 		station.turnOn();
 		session = new Session(this.station);
-		session.startSession();
+		//session.startSession();
 	}
 	
 	//Test for when there is no power for the barcode to be scanned
