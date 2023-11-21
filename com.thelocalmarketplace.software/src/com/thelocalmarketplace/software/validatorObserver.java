@@ -1,8 +1,14 @@
-//Jason Very, 30222040
-//Tara Strickland, 10105877
-//Ali Sebbah, 30172851
-//Fikayo Akande, 30185937
-//Maleeha Siddiqui, 30179762
+// Shaikh Sajid Mahmood 30182396
+// Sana Abdelhalem    30163580
+// Ali Al Yasseen     30151000
+// Yang Yang          30156356
+// Andres Genatios    30142768
+// Abdullah Ishtiaq   30153185
+// Nicholas MacKinnon 30172737
+// Carlos Serrouya    30192761
+// Logan Miszaniec    30156384
+// Ali Sebbah         30172851
+
 package com.thelocalmarketplace.software;
 
 import java.math.BigDecimal;
