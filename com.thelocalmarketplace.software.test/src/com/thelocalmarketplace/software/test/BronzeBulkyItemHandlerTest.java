@@ -9,8 +9,13 @@
 // Logan Miszaniec    30156384
 // Ali Sebbah         30172851
 
+package com.thelocalmarketplace.software.test;
+
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.After;
+
+import static org.junit.Assert.assertTrue;
 
 import com.jjjwelectronics.Mass;
 import com.jjjwelectronics.Numeral;
@@ -65,25 +70,29 @@ public class BronzeBulkyItemHandlerTest {
 
     @Test
     public void testProcessBulkyItem_ItemTooBulky() {
-
+    	handler.processBulkyItem(bulkyItem);
+    	
+    	assertTrue("Bulky item processed: " + bulkyItem.getBarcode(), !session.isStationBlockedForBulkyItem);
     }
 
     @Test
     public void testProcessBulkyItem_ItemNotTooBulky() {
-
+    	handler.processBulkyItem(normalItem);
+    	assertTrue(!session.isStationBlockedForBulkyItem);
     }
 
     @Test
     public void testProcessNormalItem() {
-
+    	handler.processBulkyItem(normalItem);
+    	assertTrue(!!session.isStationBlockedForBulkyItem);
     }
 
-    @Test
-    public void testProcessBulkyItem_ScaleLimitEqualsItemMass() {
-
-    }
 
 }
+
+
+
+
 
 
 

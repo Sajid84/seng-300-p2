@@ -9,7 +9,7 @@
 // Ali Sebbah         30172851
 // Shaikh Sajid Mahmood 30182396
 
-package src.com.thelocalmarketplace.software.test;
+package com.thelocalmarketplace.software.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

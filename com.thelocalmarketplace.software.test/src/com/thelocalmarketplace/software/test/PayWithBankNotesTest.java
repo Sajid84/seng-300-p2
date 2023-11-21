@@ -9,7 +9,7 @@
 // Ali Sebbah         30172851
 // Shaikh Sajid Mahmood 30182396
 
-package PayWithBankNotesTest;
+package com.thelocalmarketplace.software.test;
 
 import static org.junit.Assert.*;
 import org.junit.Before;

@@ -87,7 +87,7 @@ public class Session {
 	 * coin validator listener that will be attached to the coin validator of the station
 	 */
 	public validatorObserver validatorObserver;
-	private boolean isStationBlockedForBulkyItem;
+	public boolean isStationBlockedForBulkyItem;
 	/**
 	 * Constructor without any arguments
 	 */
