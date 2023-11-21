@@ -8,7 +8,6 @@
 // Logan Miszaniec    30156384
 // Ali Sebbah         30172851
 
-//Edited on the base of Iteration1
 
 package com.thelocalmarketplace.software.test;
 

@@ -7,8 +7,7 @@
 // Carlos Serrouya    30192761
 // Logan Miszaniec    30156384
 // Ali Sebbah         30172851
-
-//Edited on the base of Iteration1
+// Shaikh Sajid Mahmood 30182396
 
 package com.thelocalmarketplace.software.test;
 
