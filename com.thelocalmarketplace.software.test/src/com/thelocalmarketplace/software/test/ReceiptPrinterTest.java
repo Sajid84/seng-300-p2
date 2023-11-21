@@ -14,6 +14,7 @@ package com.thelocalmarketplace.software.test;
 import org.junit.Test;
 
 import com.thelocalmarketplace.software.ReceiptPrinter;
+import com.thelocalmarketplace.software.ReceiptPrinter.PaymentRecord;
 
 import static org.junit.Assert.*;
 import java.util.Date;
@@ -24,7 +25,7 @@ public class ReceiptPrinterTest {
     @Test
     public void testPrintReceipt_SuccessfulPrinting() {
         ReceiptPrinter receiptPrinter = new ReceiptPrinter();
-        TestPaymentRecord paymentRecord = new TestPaymentRecord(new Date(), "Credit Card", 50.0);
+        PaymentRecord paymentRecord = receiptPrinter.new PaymentRecord(new Date(), "Credit Card", 50.0);
 
         try {
             receiptPrinter.printReceipt(paymentRecord);
@@ -36,16 +37,14 @@ public class ReceiptPrinterTest {
     @Test
     public void testPrintReceipt_OutOfPaperOrInkException() {
         ReceiptPrinter receiptPrinter = new ReceiptPrinter();
-        TestPaymentRecord paymentRecord = new TestPaymentRecord(new Date(), "Credit Card", 50.0);
-
+        PaymentRecord paymentRecord = receiptPrinter.new PaymentRecord(new Date(), "Credit Card", 50.0);
+        
         // Force out of paper or ink scenario
         receiptPrinter.isOutOfPaperOrInk = true;
 
         try {
             receiptPrinter.printReceipt(paymentRecord);
             fail("OutOfPaperOrInkException should be thrown");
-        } catch (OutOfPaperOrInkException e) {
-            // Success - exception should be thrown
         } catch (Exception e) {
             fail("Unexpected exception thrown");
         }
@@ -60,16 +59,14 @@ public class ReceiptPrinterTest {
     @Test
     public void testPrintReceipt_ReceiptPrintingException() {
         ReceiptPrinter receiptPrinter = new ReceiptPrinter();
-        TestPaymentRecord paymentRecord = new TestPaymentRecord(new Date(), "Credit Card", 50.0);
-
+        PaymentRecord paymentRecord = receiptPrinter.new PaymentRecord(new Date(), "Credit Card", 50.0);
+        
         // Simulate a failure during printing
         receiptPrinter.printPaymentRecord = false;
 
         try {
             receiptPrinter.printReceipt(paymentRecord);
             fail("ReceiptPrintingException should be thrown");
-        } catch (ReceiptPrintingException e) {
-            // Success - exception should be thrown
         } catch (Exception e) {
             fail("Unexpected exception thrown");
         }

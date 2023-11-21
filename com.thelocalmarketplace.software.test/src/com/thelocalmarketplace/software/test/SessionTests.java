@@ -17,6 +17,8 @@ import org.junit.Before;
 import org.junit.Test;
 import com.jjjwelectronics.Numeral;
 import com.jjjwelectronics.scanner.Barcode;
+import com.tdc.CashOverloadException;
+import com.tdc.DisabledException;
 import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
 import com.thelocalmarketplace.hardware.BarcodedProduct;
 import com.thelocalmarketplace.hardware.Product;
@@ -34,9 +36,9 @@ public class SessionTests {
         public ProductDatabases BARCODED_PRODUCT_DATABASE;
         public AbstractSelfCheckoutStation checkoutStation;
         public boolean inCheckout;
-        public ScannerListener bl;
-        public ScaleListener sl;
-        public validatorObserver vo;
+        public ScannerListener scannerListener;
+        public ScaleListener scaleListener;
+        public validatorObserver validatorObserver;
         public Product product;
         public Barcode barcode;
         public BarcodedProduct barcodedProduct;
@@ -58,6 +60,7 @@ public class SessionTests {
                 ProductDatabases.BARCODED_PRODUCT_DATABASE.put(barcode, barcodedProduct);
                 
                 //Setup and create checkout station
+                AbstractSelfCheckoutStation.resetConfigurationToDefaults();
                 checkoutStation = new SelfCheckoutStationGold();
                 checkoutStation.plugIn(PowerGrid.instance());
                 checkoutStation.turnOn();
@@ -345,7 +348,7 @@ public class SessionTests {
         
         //Tests if checkout can successfully exit once completed
         @Test
-        public void testExitCheckout() {
+        public void testExitCheckout() throws DisabledException, CashOverloadException {
                 Cart cart = new Cart();
                 session.startSession();
                 session.cart = cart;

@@ -12,10 +12,13 @@
 
 
 package com.thelocalmarketplace.software;
+
 import ca.ucalgary.seng300.simulation.InvalidArgumentSimulationException;
 import ca.ucalgary.seng300.simulation.InvalidStateSimulationException;
 import ca.ucalgary.seng300.simulation.NullPointerSimulationException;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Comparator;
@@ -24,12 +27,14 @@ import java.util.Vector;
 import com.jjjwelectronics.IDevice;
 import com.jjjwelectronics.Mass;
 import com.jjjwelectronics.scale.IElectronicScale;
+import com.jjjwelectronics.scanner.Barcode;
 import com.jjjwelectronics.scanner.BarcodedItem;
 import com.jjjwelectronics.scanner.IBarcodeScanner;
 import com.tdc.CashOverloadException;
 import com.tdc.DisabledException;
 import com.tdc.NoCashAvailableException;
 import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
+import com.thelocalmarketplace.hardware.BarcodedProduct;
 /*
 * Represents a self checkout session that a customer will start
 * */
@@ -43,7 +48,10 @@ public class Session {
 	 */
 	public AbstractSelfCheckoutStation station;
 	
-	private boolean isStationBlockedForBulkyItem;
+	private List<BarcodedItem> bulkyItems = new ArrayList<>();
+	
+	private Mass totalExpectedWeight;
+
 	
 	/*
 	 * flag to check the register status of devices
@@ -73,6 +81,7 @@ public class Session {
 	 * coin validator listener that will be attached to the coin validator of the station
 	 */
 	public validatorObserver validatorObserver;
+	private boolean isStationBlockedForBulkyItem;
 	/**
 	 * Constructor without any arguments
 	 */
@@ -254,13 +263,7 @@ public class Session {
 	        if (this.station.baggingArea != null) {
 	            this.station.baggingArea.disable();
 	        }
-	        // Additional disabling logic for other components (e.g., payment system)
-	        // Example:
-	        // if (this.station.cardReader != null) {
-	        // this.station.cardReader.disable();
-	        // }
-	        // Update GUI if necessary
-	        // Example: updateGUIForBulkyItemProcessing();
+
 	    }
 	}
 
@@ -299,16 +302,10 @@ public class Session {
 	    if (item == null) {
 	        throw new IllegalArgumentException("Item cannot be null.");
 	    }
-	    // Assuming there is a way to get the expected weight from the bagging area
-	    // and a method to set the expected weight.
 	    // Adjust the expected weight to account for the bulky item.
-	    Mass expectedWeight = this.station.baggingArea.getExpectedWeight();
-	    expectedWeight = expectedWeight.subtract(item.getMass());
-	    this.station.baggingArea.setExpectedWeight(expectedWeight);
-	    // Optionally, add the bulky item to the cart with a special flag or category.
-	    cart.addBulkyItem(item);
+	    // Since we cannot directly modify the cart, we adjust the session's state
+	    bulkyItems.add(item); // Keep track of bulky items separately
 	}
-
 	/**
 	* Processes a normal item by scanning it and adding it to the cart.
 	*
@@ -318,16 +315,23 @@ public class Session {
 	    if (item == null) {
 	        throw new IllegalArgumentException("Item cannot be null.");
 	    }
-	    // Scan the item's barcode and add it to the cart.
+
+	    // Scan the item's barcode.
 	    Barcode barcode = item.getBarcode();
-	    // Assuming the scannerListener has a method to process the scanned item.
-	    scannerListener.scanItem(barcode);
-	    // Add the item to the cart.
-	    cart.addItem(item);
+
+	    // Process the scanned item using the scannerListener.
+	    scannerListener.aBarcodeHasBeenScanned(this.station.mainScanner, barcode);
+
 	    // Update the expected weight in the bagging area.
-	    Mass expectedWeight = this.station.baggingArea.getExpectedWeight();
-	    expectedWeight = expectedWeight.add(item.getMass());
-	    this.station.baggingArea.setExpectedWeight(expectedWeight);
+	    updateExpectedWeight(item.getMass());
+	}
+	
+	// Helper method to maintain the expected weight in the bagging area
+	private void updateExpectedWeight(Mass itemMass) {
+
+	    // Add the mass of the new item to the total expected weight
+	    totalExpectedWeight = totalExpectedWeight.sum(itemMass);
+
 	}
 	
 	/**

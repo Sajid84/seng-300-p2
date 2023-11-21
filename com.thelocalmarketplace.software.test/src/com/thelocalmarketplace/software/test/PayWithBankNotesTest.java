@@ -9,6 +9,8 @@
 // Ali Sebbah         30172851
 // Shaikh Sajid Mahmood 30182396
 
+package PayWithBankNotesTest;
+
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,8 +48,9 @@ public class PayWithBankNotesTest {
     public void testGoodBanknoteCartPaid() {
         Currency currency = Currency.getInstance("USD");
         BigDecimal denomination = new BigDecimal("50.00");
+        BigDecimal[] validDenominations = new BigDecimal[]{new BigDecimal("20.00"), new BigDecimal("50.00")}; // Example valid denominations
 
-        payment.goodBanknote(new BanknoteValidator(currency, null), currency, denomination);
+        payment.goodBanknote(new BanknoteValidator(currency,validDenominations), currency, denomination);
 
         assertEquals(BigDecimal.ZERO, BigDecimal.valueOf(cart.getCartTotal()));
         assertTrue(cart.getPayment());
@@ -56,9 +59,14 @@ public class PayWithBankNotesTest {
     @Test
     public void testGoodBanknoteRemainingBalance() {
         Currency currency = Currency.getInstance("USD");
-        BigDecimal denomination = new BigDecimal("30.00");
-
-        payment.goodBanknote(new BanknoteValidator(currency, null), currency, denomination);
+        //BigDecimal denomination = new BigDecimal("30.00");
+        BigDecimal[] validDenominations = new BigDecimal[]{new BigDecimal("20.00"), new BigDecimal("50.00")}; // Example valid denominations
+        
+        BigDecimal goodDenomination = new BigDecimal("20.00");
+        
+        BanknoteValidator validator = new BanknoteValidator(currency, validDenominations);
+        
+        payment.goodBanknote(validator, currency, goodDenomination);
 
         assertEquals(new BigDecimal("20.00"), BigDecimal.valueOf(cart.getCartTotal()));
         assertFalse(!cart.getPayment());
@@ -66,7 +74,14 @@ public class PayWithBankNotesTest {
 
     @Test
     public void testBadBanknote() {
-        payment.badBanknote(new BanknoteValidator(null, null));
+    	Currency currency = Currency.getInstance("USD");
+        BigDecimal[] validDenominations = new BigDecimal[]{new BigDecimal("20.00"), new BigDecimal("50.00")}; // Example valid denominations
+
+        BanknoteValidator validator = new BanknoteValidator(currency, validDenominations);
+        // Simulate a bad banknote here. For example, use a denomination not in validDenominations
+        BigDecimal badDenomination = new BigDecimal("0.00"); // Assuming this is an invalid denomination
+
+        payment.badBanknote(validator);
 
         assertFalse(!cart.getPayment());
     }

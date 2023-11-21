@@ -127,14 +127,19 @@ public class PayByCoinTests {
 	@Test
 	public void insertValidCoinWithPower() throws DisabledException, CashOverloadException {
 		prepareStation();
+		//session.startSession();
+		//System.out.println("Before test, The cart total is" + session.cart.getCartTotal());
 		itemMass = new Mass((double) 3.0);
 		bitem = new BarcodedItem(barcode, itemMass);
 		session.station.mainScanner.scan(bitem);
 		session.station.baggingArea.addAnItem(bitem);
+		//System.out.println("Before insert, The cart total is" + session.cart.getCartTotal());
 		session.checkout();
 		session.station.coinSlot.sink.receive(oneDollarCoin);
 		//expected price of cart 5 - 1 = 4
+		//System.out.println("After insertion, The cart total is" + session.cart.getCartTotal());
 		assertTrue("cart total was not updated correctly", session.cart.getCartTotal()==4);
+		
 	}
 	
 	@Test(expected = SimulationException.class)
