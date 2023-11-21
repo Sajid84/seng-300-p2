@@ -10,6 +10,9 @@
 
 package com.thelocalmarketplace.software;
 
+import java.math.BigInteger;
+
+import com.jjjwelectronics.Mass;
 import com.jjjwelectronics.scale.ElectronicScaleSilver;
 import com.jjjwelectronics.scanner.BarcodedItem;
 import com.jjjwelectronics.scanner.Barcode;
@@ -18,11 +21,12 @@ import com.thelocalmarketplace.hardware.external.ProductDatabases;
 
 /**
  * Handler for processing bulky items at a Silver model self-checkout station.
- * It includes logic to determine if an item is too bulky and to provide appropriate feedback.
  */
 public class SilverBulkyItemHandler {
     private ElectronicScaleSilver scale;
     private Session session;
+    private static final Mass SILVER_SCALE_MASS_LIMIT = new Mass(new BigInteger("10000000000")); // 10 kg
+
 
     /**
      * Constructs a SilverBulkyItemHandler with a given scale and session.
@@ -37,7 +41,6 @@ public class SilverBulkyItemHandler {
 
     /**
      * Processes a bulky item. If the item is too bulky, handles it accordingly.
-     * Otherwise, processes it as a normal item.
      *
      * @param item The item to be processed.
      */
@@ -56,7 +59,7 @@ public class SilverBulkyItemHandler {
      * @return True if the item is too bulky, false otherwise.
      */
     private boolean isItemTooBulky(BarcodedItem item) {
-        return item.getMass().compareTo(ElectronicScaleSilver.MASS_LIMIT) > 0;
+        return item.getMass().compareTo(SILVER_SCALE_MASS_LIMIT) > 0;
     }
 
     /**
@@ -113,12 +116,16 @@ public class SilverBulkyItemHandler {
     private String getHandlingInstructions(Barcode barcode) {
         BarcodedProduct product = ProductDatabases.BARCODED_PRODUCT_DATABASE.get(barcode);
         if (product != null) {
-            double expectedWeight = product.getExpectedWeight();
+            double expectedWeightInGrams = product.getExpectedWeight();
             String handlingInfo;
 
-            if (expectedWeight > ElectronicScaleSilver.MASS_LIMIT.doubleValue()) {
+            // Silver scale specific values
+            double massLimitInGrams = 10000; // 10 kg as 10000 grams
+            double sensitivityLimitInGrams = 1; // 1 g sensitivity
+
+            if (expectedWeightInGrams > massLimitInGrams) {
                 handlingInfo = "Item is too heavy for standard bagging. Please seek assistance.";
-            } else if (expectedWeight > ElectronicScaleSilver.SENSITIVITY.doubleValue() && expectedWeight <= ElectronicScaleSilver.MASS_LIMIT.doubleValue()) {
+            } else if (expectedWeightInGrams > sensitivityLimitInGrams && expectedWeightInGrams <= massLimitInGrams) {
                 handlingInfo = "Carefully place item in the bagging area, if possible.";
             } else {
                 handlingInfo = "Standard handling is sufficient for this item.";
@@ -128,6 +135,9 @@ public class SilverBulkyItemHandler {
         }
         return "Handling instructions not available.";
     }
+
+
 }
+
 
 
