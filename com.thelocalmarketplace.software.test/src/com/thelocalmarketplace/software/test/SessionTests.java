@@ -34,9 +34,9 @@ public class SessionTests {
         public ProductDatabases BARCODED_PRODUCT_DATABASE;
         public AbstractSelfCheckoutStation checkoutStation;
         public boolean inCheckout;
-        public ScannerListener bl;
-        public ScaleListener sl;
-        public validatorObserver vo;
+        public ScannerListener scannerListener;
+        public ScaleListener scaleListener;
+        public validatorObserver validatorObserver;
         public Product product;
         public Barcode barcode;
         public BarcodedProduct barcodedProduct;
@@ -58,6 +58,7 @@ public class SessionTests {
                 ProductDatabases.BARCODED_PRODUCT_DATABASE.put(barcode, barcodedProduct);
                 
                 //Setup and create checkout station
+                AbstractSelfCheckoutStation.resetConfigurationToDefaults();
                 checkoutStation = new SelfCheckoutStationGold();
                 checkoutStation.plugIn(PowerGrid.instance());
                 checkoutStation.turnOn();
