@@ -7,6 +7,7 @@
 // Carlos Serrouya    30192761
 // Logan Miszaniec    30156384
 // Ali Sebbah         30172851
+// Shaikh Sajid Mahmood 30182396
 
 //Edited on the base of Iteration1
 
@@ -35,6 +36,7 @@ import com.tdc.DisabledException;
 import com.tdc.NoCashAvailableException;
 import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
 import com.thelocalmarketplace.hardware.BarcodedProduct;
+import com.thelocalmarketplace.hardware.Product;
 /*
 * Represents a self checkout session that a customer will start
 * */
@@ -42,13 +44,17 @@ public class Session {
 	/**
 	 * Flag set when a session has successfully started.
 	 */
-	private boolean hasStarted;
+	private static boolean hasStarted;
 	/**
 	 * Checkout station that the session will be running on
 	 */
-	public AbstractSelfCheckoutStation station;
+	public static AbstractSelfCheckoutStation station;
+	
+	public static AbstractSelfCheckoutStation getStation() { return station; }
 	
 	private List<BarcodedItem> bulkyItems = new ArrayList<>();
+	
+	public static ArrayList<Product> shoppingCart = Cart.getCart();
 	
 	private Mass totalExpectedWeight;
 
@@ -154,6 +160,15 @@ public class Session {
 	
 	}
 	
+	public static void startSession(AbstractSelfCheckoutStation newstation) throws Exception {
+		if(hasStarted) {
+			throw new Exception();
+		}
+		station = newstation;
+		shoppingCart.clear();
+		hasStarted = true;
+	}
+	
 	/**
 	 * checks if the session has started
 	 *
@@ -179,8 +194,10 @@ public class Session {
 	
 	/**
 	 *Exits a checkout state, where the customer can not pay for an order.
+	 * @throws CashOverloadException 
+	 * @throws DisabledException 
 	 */
-	public void exitCheckout() {
+	public void exitCheckout() throws DisabledException, CashOverloadException {
 		inCheckout = false;
 		cart.endPayment();
 		giveChange(cart.getCartTotal());
