@@ -1,4 +1,4 @@
-//Yang Yang           30156356
+// Yang Yang           30156356
 // Sana Abdelhalem    30163580
 // Ali Al Yasseen     30151000
 // Andres Genatios    30142768
@@ -272,3 +272,4 @@ public class PayWithDebitTest {
         debitCard2.swipeCard(card2);
     }
 }
+
