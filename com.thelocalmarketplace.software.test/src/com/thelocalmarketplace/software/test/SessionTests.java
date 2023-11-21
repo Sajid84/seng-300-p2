@@ -7,9 +7,9 @@
 // Carlos Serrouya    30192761
 // Logan Miszaniec    30156384
 // Ali Sebbah         30172851
+// Shaikh Sajid Mahmood 30182396
 
-
-package com.thelocalmarketplace.software.test;
+package src.com.thelocalmarketplace.software.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -17,13 +17,14 @@ import org.junit.Before;
 import org.junit.Test;
 import com.jjjwelectronics.Numeral;
 import com.jjjwelectronics.scanner.Barcode;
+import com.thelocalmarketplace.hardware.AbstractSelfCheckoutStation;
 import com.thelocalmarketplace.hardware.BarcodedProduct;
 import com.thelocalmarketplace.hardware.Product;
-import com.thelocalmarketplace.hardware.SelfCheckoutStation;
+import com.thelocalmarketplace.hardware.SelfCheckoutStationGold;
 import com.thelocalmarketplace.hardware.external.ProductDatabases;
-import com.thelocalmarketplace.software.BarcodeListener;
 import com.thelocalmarketplace.software.Cart;
 import com.thelocalmarketplace.software.ScaleListener;
+import com.thelocalmarketplace.software.ScannerListener;
 import com.thelocalmarketplace.software.Session;
 import com.thelocalmarketplace.software.validatorObserver;
 import ca.ucalgary.seng300.simulation.InvalidStateSimulationException;
@@ -31,9 +32,9 @@ import powerutility.PowerGrid;
 import com.jjjwelectronics.Numeral;
 public class SessionTests {
         public ProductDatabases BARCODED_PRODUCT_DATABASE;
-        public SelfCheckoutStation checkoutStation;
+        public AbstractSelfCheckoutStation checkoutStation;
         public boolean inCheckout;
-        public BarcodeListener bl;
+        public ScannerListener bl;
         public ScaleListener sl;
         public validatorObserver vo;
         public Product product;
@@ -57,12 +58,12 @@ public class SessionTests {
                 ProductDatabases.BARCODED_PRODUCT_DATABASE.put(barcode, barcodedProduct);
                 
                 //Setup and create checkout station
-                checkoutStation = new SelfCheckoutStation();
+                checkoutStation = new SelfCheckoutStationGold();
                 checkoutStation.plugIn(PowerGrid.instance());
                 checkoutStation.turnOn();
                 
                 //create new session environment
-                session = new Session(checkoutStation,BARCODED_PRODUCT_DATABASE);
+                session = new Session(checkoutStation);
         
         }
         
@@ -127,7 +128,7 @@ public class SessionTests {
         public void testCanStartBSOff() {
                 Cart cart = new Cart();
                 session.cart = cart;
-                checkoutStation.scanner.disable();
+                checkoutStation.mainScanner.disable();
                 boolean c = session.canStart();
                 assertFalse(c);
                 
@@ -139,7 +140,7 @@ public class SessionTests {
         public void testCanStartBSunplugged() {
                 Cart cart = new Cart();
                 session.cart = cart;
-                checkoutStation.scanner.unplug();;
+                checkoutStation.mainScanner.unplug();;
                 boolean c = session.canStart();
                 assertFalse(c);
                 
